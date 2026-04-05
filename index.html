@@ -1,13 +1,365 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shams Ul Rehman | Digital Marketing Manager & SEO Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --dark-blue: #0056b3;
+            --text-main: #333;
+            --text-muted: #666;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fa;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 10%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li { margin-left: 30px; }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary-blue); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at top right, #f0f7ff 0%, #ffffff 50%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .hero h1 span { color: var(--primary-blue); }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .cta-group { display: flex; gap: 15px; }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary { background: var(--primary-blue); color: white; }
+        .btn-primary:hover { background: var(--dark-blue); transform: translateY(-3px); }
+
+        .btn-outline { border: 2px solid var(--primary-blue); color: var(--primary-blue); }
+        .btn-outline:hover { background: var(--primary-blue); color: white; }
+
+        /* Section Styling */
+        section { padding: 100px 10% 60px; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-blue);
+        }
+
+        /* About & Skills */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover { background: white; box-shadow: var(--shadow); color: var(--primary-blue); }
+
+        /* Services & Projects */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--primary-blue);
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-btn {
+            padding: 15px 25px;
+            background: var(--bg-light);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .about-container { grid-template-columns: 1fr; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">Shams.</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1 data-aos="fade-up">Hi, I'm <span>Shams Ul Rehman</span></h1>
+        <p data-aos="fade-up" data-aos-delay="100">Digital Marketing Manager & Content Specialist focused on helping brands scale through data-driven SEO and high-converting content strategies.</p>
+        <div class="cta-group" data-aos="fade-up" data-aos-delay="200">
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
+            <a href="#projects" class="btn btn-outline">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-container">
+            <div data-aos="fade-right">
+                <h3>A Senior Digital Marketing Professional</h3>
+                <p>I bridge the gap between business goals and online visibility. With a deep background in SEO and content management, I create digital experiences that don't just look good—they perform. I specialize in turning complex data into actionable marketing strategies that drive organic traffic and lead generation.</p>
+            </div>
+            <div class="skills-grid" data-aos="fade-left">
+                <div class="skill-card"><i class="fas fa-search-dollar"></i><br>SEO Strategy</div>
+                <div class="skill-card"><i class="fas fa-pen-nib"></i><br>Copywriting</div>
+                <div class="skill-card"><i class="fas fa-chart-line"></i><br>Analytics</div>
+                <div class="skill-card"><i class="fas fa-share-alt"></i><br>Social Media</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" style="background: var(--bg-light);">
+        <div class="section-title">
+            <h2>What I Do</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-rocket"></i>
+                <h3>SEO Optimization</h3>
+                <p>Full-funnel SEO including technical audits, on-page optimization, and high-quality backlink strategies.</p>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-file-alt"></i>
+                <h3>Blog & Content Writing</h3>
+                <p>Creating SEO-friendly, engaging blog posts that establish authority and resonate with your target audience.</p>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Digital Strategy</h3>
+                <p>Comprehensive B2B marketing roadmaps designed to increase ROI and brand presence across all channels.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-title">
+            <h2>Featured Projects</h2>
+        </div>
+        <div class="card-grid">
+            <div class="card" data-aos="fade-up">
+                <h3>How To & Lifestyles</h3>
+                <p>A lifestyle blog focused on actionable advice. I managed SEO, indexing, and content structure.</p>
+                <a href="https://howtoandlifes.blogspot.com/" target="_blank" style="color: var(--primary-blue); text-decoration: none; font-weight: 600; margin-top: 15px; display: block;">Visit Blog →</a>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Lead Gen Campaigns</h3>
+                <p>Optimized LinkedIn strategies for B2B brands, resulting in 40% increase in qualified leads.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Savoury Gourmands</h3>
+                <p>Market research and keyword analysis for 2026 sustainable luxury trends.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Let's Connect</h2>
+        </div>
+        <div class="contact-links" data-aos="fade-up">
+            <a href="https://wa.me/923174137440" class="social-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="mailto:ak9612940@gmail.com" class="social-btn"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/shams-ul-rehman-960474245/" class="social-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/ak9612940-ux" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.facebook.com/shamsreh8" class="social-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://drive.google.com/drive/ak9612940@gmail" class="social-btn"><i class="fab fa-google-drive"></i> Portfolio Drive</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Shams Ul Rehman. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Sticky Nav logic
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '10px 10%';
+                nav.style.background = '#ffffff';
+            } else {
+                nav.style.padding = '20px 10%';
+            }
+        });
+    </script>
+</body>
+</html>
