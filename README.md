@@ -1,20 +1,27 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+<img width="1200" height="475" alt="Shams Rehman Portfolio Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+
+# Shams Rehman | Professional Portfolio
+### Digital Marketing Manager • SEO Expert • Content Writer
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## 🚀 Overview
+Welcome to my official portfolio repository. This project showcases my expertise in driving organic growth, managing digital marketing campaigns, and crafting high-conversion web content. 
 
-View your app in AI Studio: https://ai.studio/apps/70f24ee1-3d9a-4a83-ac7a-7d8180bb8453
+**Live App/Portfolio:** [View my Portfolio in AI Studio](https://ai.studio/apps/70f24ee1-3d9a-4a83-ac7a-7d8180bb8453)
 
-## Run Locally
+## 🛠️ Core Services
+* **Search Engine Optimization (SEO):** On-page/Off-page strategy, technical audits, and keyword research.
+* **Digital Marketing Management:** B2B lead generation, social media strategy, and performance analytics.
+* **Content Writing:** SEO-optimized blog posts, lifestyle content, and professional web copywriting.
 
-**Prerequisites:**  Node.js
+## 💻 Technical Setup
+If you are a developer looking to run this portfolio locally or contribute:
 
+**Prerequisites:** Node.js
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Install dependencies:**
+   ```bash
+   npm install
