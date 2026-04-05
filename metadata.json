@@ -1,5 +1,15 @@
 {
   "name": "Shams Ul Rehman Portfolio",
-  "description": "Professional portfolio for Shams Ul Rehman, a Digital Marketing Manager, SEO Specialist, and Content Writer.",
+  "description": "A high-converting, modern portfolio for a Digital Marketing Manager and SEO Specialist. Features include a responsive UI, skill highlights, service cards, and integrated contact CTAs.",
+  "version": "1.0.0",
+  "author": "Shams Ul Rehman",
+  "tech_stack": ["HTML5", "CSS3", "JavaScript", "AOS Library", "FontAwesome"],
+  "features": [
+    "Sticky Navigation",
+    "Hero Section with Animations",
+    "Service & Project Grid",
+    "Social Media & Professional Link Integration",
+    "Mobile Responsive Design"
+  ],
   "requestFramePermissions": []
 }
